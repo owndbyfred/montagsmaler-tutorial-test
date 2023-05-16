@@ -12,7 +12,7 @@ const timeEl = document.querySelector(".time");
 const gameEndEl = document.querySelector("#game-end");
 const scoredPointsEl = document.querySelector(".scored-points");
 
-const ROUND_TIME = 2; // 60s = 1 minute
+const ROUND_TIME = 60; // 60s = 1 minute
 
 let words = [];
 let currentWord = "";
