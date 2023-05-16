@@ -9,12 +9,59 @@
   </head>
   <body>
     <h1 class="heading">Montagsmaler</h1>
-    <p class="your-word-text">Dein Wort ist:</p>
-    <h2 class="word">-</h2>
-    <button class="button" onclick="onClick()">Neues Wort &#10024;</button>
-    <p class="previous-words">
-      Vorherige Wörter: <span class="old-words">-</span>
-    </p>
+
+    <div id="choose-game">
+      <h2 class="game-mode">Wähle deinen Spielmodus:</h2>
+      <button id="start-normal-game" class="button" onclick="startNormalGame()">
+        Normal
+      </button>
+      <button
+        id="start-competitive-game"
+        class="button"
+        onclick="startCompetitiveGame()"
+      >
+        Wettkampf
+      </button>
+    </div>
+
+    <div id="normal-game" class="hidden">
+      <p class="your-word-text">Dein Wort ist:</p>
+      <h2 class="word">-</h2>
+      <button class="button" onclick="onClick()">Neues Wort &#10024;</button>
+      <p class="previous-words">
+        Vorherige Wörter: <span class="old-words">-</span>
+      </p>
+    </div>
+
+    <div id="competitive-game" class="hidden">
+      <p class="remaining-time-text">Verbleibende Zeit:</p>
+      <h2 class="time">0</h2>
+      <p class="your-word-text">Dein Wort ist:</p>
+      <h2 class="word">-</h2>
+      <button
+        id="button-wrong"
+        class="game-button"
+        onclick="competitiveButtonClick(this)"
+      >
+        Falsch
+      </button>
+      <button
+        id="button-correct"
+        class="game-button"
+        onclick="competitiveButtonClick(this)"
+      >
+        Richtig
+      </button>
+    </div>
+
+    <div id="game-end" class="hidden">
+      <div class="scored-points-text">Erzielte Punktzahl:</div>
+      <div class="scored-points">0</div>
+      <button id="restart" class="button" onclick="restartCompetitiveGame()">
+        Erneut starten
+      </button>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
